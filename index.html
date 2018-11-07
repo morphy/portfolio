@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Mateusz Wasik">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="page">
+      <div class="menu">
+        <div class="logo">
+          <span>M</span>
+          <span>A</span>
+          <span>T</span>
+          <span>E</span>
+          <span>U</span>
+          <span>S</span>
+          <span>Z</span>
+          <span>&nbsp;</span>
+          <span>W</span>
+          <span>A</span>
+          <span>S</span>
+          <span>I</span>
+          <span>K</span>
+        </div>
+        <ul class="nav">
+          <div class="indicator"></div>
+          <li id="one">
+            <a>
+              <div>About me</div>
+              <div>Read about me</div>
+            </a>
+          </li>
+          <li id="two">
+            <a>
+              <div>My Work</div>
+              <div>Take a look on my projects</div>
+            </a>
+          </li>
+          <li id="three">
+            <a>
+              <div>Contact me</div>
+              <div>Let's stay in touch</div>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="wheel">
+
+      </div>
+    </div>
+    <script>
+
+      document.getElementById('one').addEventListener('click', function()
+      {
+        document.getElementsByClassName('indicator')[0].style.top = '10px';
+      });
+
+      document.getElementById('two').addEventListener('click', function()
+      {
+        document.getElementsByClassName('indicator')[0].style.top = '140px';
+      });
+
+      document.getElementById('three').addEventListener('click', function()
+      {
+        document.getElementsByClassName('indicator')[0].style.top = '270px';
+      });
+      
+    </script>
+  </body>
+</html>
