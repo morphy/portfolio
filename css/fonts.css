@@ -5,3 +5,11 @@
   font-style: normal;
   font-weight: normal;
 }
+
+@font-face
+{
+  font-family: "DINWeb";
+  src: url("../fonts/DINWebPro-Medium.woff") format("woff");
+  font-style: normal;
+  font-weight: 500;
+}
