@@ -28,19 +28,19 @@
         </div>
         <ul class="nav">
           <div class="indicator"></div>
-          <li id="li-1">
+          <li data-connect="1" class="li">
             <a>
               <div>About me</div>
               <div>Read about me</div>
             </a>
           </li>
-          <li id="li-2">
+          <li data-connect="2" class="li">
             <a>
               <div>My Work</div>
               <div>Take a look on my projects</div>
             </a>
           </li>
-          <li id="li-3">
+          <li data-connect="3" class="li">
             <a>
               <div>Contact me</div>
               <div>Let's stay in touch</div>
@@ -59,28 +59,28 @@
             <circle class="spin-2" cx="220" cy="220" r="194" stroke="#0b4f66" stroke-width="18" stroke-dasharray="1 5" stroke-linecap="butt" fill="transparent" />
           </svg>
           <div class="circles">
-            <div id="c-1" class="circle active">
+            <div data-connect="1" class="circle active">
               <span>About me</span>
             </div>
-            <div id="c-3" class="circle">
+            <div data-connect="3" class="circle">
               <span>Contact me</span>
             </div>
-            <div id="c-2" class="circle">
+            <div data-connect="2" class="circle">
               <span>My work</span>
             </div>
           </div>
           <div class="texts">
-            <div id="t-1" class="text active">
+            <div data-connect="1" class="text active">
               <h1>Who am I ?</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
               <a>Read more</a>
             </div>
-            <div id="t-2" class="text">
+            <div data-connect="3" class="text">
               <h1>How to find me?</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
               <a>Read more</a>
             </div>
-            <div id="t-3" class="text">
+            <div data-connect="2" class="text">
               <h1>What I do ?</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
               <a>Read more</a>
@@ -91,35 +91,20 @@
     </div>
     <script>
 
-      document.getElementById('li-1').addEventListener('click', function()
-      {
-        document.getElementsByClassName('indicator')[0].style.top = '10px';
-        document.getElementsByClassName('circles')[0].style.transform = 'rotate(0deg)';
-        document.querySelector('div[id^="c"].active').classList.remove('active');
-        document.querySelector('div[id^="t"].active').classList.remove('active');
-        document.getElementById('c-1').classList.add('active');
-        document.getElementById('t-1').classList.add('active');
-      });
+      var li = document.getElementsByClassName('li');
 
-      document.getElementById('li-2').addEventListener('click', function()
+      for(var i=0; i<li.length; i++)
       {
-        document.getElementsByClassName('indicator')[0].style.top = '140px';
-        document.getElementsByClassName('circles')[0].style.transform = 'rotate(120deg)';
-        document.querySelector('div[id^="c"].active').classList.remove('active');
-        document.querySelector('div[id^="t"].active').classList.remove('active');
-        document.getElementById('c-2').classList.add('active');
-        document.getElementById('t-2').classList.add('active');
-      });
-
-      document.getElementById('li-3').addEventListener('click', function()
-      {
-        document.getElementsByClassName('indicator')[0].style.top = '270px';
-        document.getElementsByClassName('circles')[0].style.transform = 'rotate(240deg)';
-        document.querySelector('div[id^="c"].active').classList.remove('active');
-        document.querySelector('div[id^="t"].active').classList.remove('active');
-        document.getElementById('c-3').classList.add('active');
-        document.getElementById('t-3').classList.add('active');
-      });
+        li[i].addEventListener('click', function()
+        {
+          document.querySelector('div.active.text').classList.remove('active');
+          document.querySelector('div.active.circle').classList.remove('active');
+          document.getElementsByClassName('indicator')[0].style.top = 10 + (parseInt(this.getAttribute('data-connect')) - 1) * 130 + 'px';
+          document.getElementsByClassName('circles')[0].style.transform = 'rotate(' + (parseInt(this.getAttribute('data-connect')) - 1) * 120 + 'deg)';
+          document.querySelector('div.circle[data-connect="' + this.getAttribute('data-connect') + '"]').classList.add('active');
+          document.querySelector('div.text[data-connect="' + this.getAttribute('data-connect') + '"]').classList.add('active');
+        });
+      }
 
     </script>
   </body>

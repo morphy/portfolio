@@ -270,7 +270,7 @@ circle
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 400ms ease-in-out 200ms;
+  transition: all 500ms ease-in-out 200ms;
 }
 
 .circle
@@ -328,6 +328,8 @@ circle
   text-align: center;
   text-transform: uppercase;
 }
+
+/* Texts */
 
 .texts
 {
