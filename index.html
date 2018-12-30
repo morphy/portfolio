@@ -5,14 +5,35 @@
     <meta name="author" content="Mateusz Wasik">
     <title>Portfolio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;subset=latin-ext">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800,900|Nunito:800&amp;subset=latin-ext">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script>
+
+      $(function()
+      {
+        $('.card').on('click', function()
+        {
+          $('.card.active').removeClass('active');
+          $(this).addClass('active');
+        });
+      });
+
+    </script>
   </head>
   <body>
-    <div class="container h-100">
-      <div class="row h-100 py-5">
+    <div class="container-fluid d-flex flex-column h-100 px-5">
+      <div class="row">
+        <div class="col-12 py-4 d-flex align-content-center">
+          <img src="img/logo.svg" class="float-left">
+          <p class="mb-0 ml-3 name">Mateusz Wasik</p>
+        </div>
+      </div>
+      <div class="row flex-grow-1 pt-3 pb-5">
         <div class="col-1">
-          <div class="d-flex flex-column justify-content-between h-100 menu">
+          <div class="d-flex flex-column justify-content-between py-3 h-100 menu">
             <div class="item-title active">01</div>
             <div class="item-spacer"></div>
             <div class="item-spacer"></div>
@@ -32,10 +53,53 @@
             <div class="item-title">05</div>
           </div>
         </div>
-        <div class="col-9 offset-1"></div>
+        <div class="col-9 offset-1 d-flex flex-column justify-content-between">
+          <div class="row">
+            <div class="col-6 py-3">
+              <h1>Hello!</h1>
+              <p class="my-5">I'm a young developer from Gdańsk. I love creatng beautiful websites and reliable web applications. Click on the button below to see some of my work!</p>
+              <button type="button" class="btn btn-primary mt-2">My work</button>
+            </div>
+            <div class="col-6">
+            </div>
+            <div class="col-5 offset-7 text-right">
+              <h2>Hire me</h2>
+              <p class="my-5">If you are interested in cooperation, feel free to contact me. We will discuss all the details and your requirements.<br>Just hit this blue guy below</p>
+              <button type="button" class="btn btn-primary mt-2">Hire me</button>
+            </div>
+          </div>
+          <div class="row border-top border-secondary">
+            <div class="col-4">
+              <div class="card active">
+                <div class="indicator"></div>
+                <div class="card-body">
+                  <h5 class="card-title">Development</h5>
+                  <p class="card-text">I create websites using the best available technologies and frameworks. Every website is individually designed and crafted with passion.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card">
+                <div class="indicator"></div>
+                <div class="card-body">
+                  <h5 class="card-title">Content managment systems</h5>
+                  <p class="card-text">If there's such a need, your website will be equpped with an appropriate CMS, making it very easy for you to modify the contents of your page.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card">
+                <div class="indicator"></div>
+                <div class="card-body">
+                  <h5 class="card-title">Start-to-end support</h5>
+                  <p class="card-text">I will help you on every step of launching your website, starting from picking the proper design and finishing on uploading everything online.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="col-1"></div>
       </div>
     </div>
-
   </body>
 </html>
